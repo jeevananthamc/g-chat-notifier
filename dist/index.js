@@ -1119,8 +1119,9 @@ function run() {
             const name = core.getInput('name', { required: true });
             const url = core.getInput('url', { required: true });
             const status = JobStatus.parse(core.getInput('status', { required: true }));
+            const msg = core.getInput('message', { required: true });
             core.debug(`input params: name=${name}, status=${status}, url=${url}`);
-            yield GoogleChat.notify(name, url, status);
+            yield GoogleChat.notify(name, url, status, msg);
             console.info('Sent message.');
         }
         catch (error) {
@@ -2402,7 +2403,7 @@ const textButton = (text, url) => ({
         onClick: { openLink: { url } }
     }
 });
-function notify(name, url, status) {
+function notify(name, url, status, msg) {
     return __awaiter(this, void 0, void 0, function* () {
         const { owner, repo } = github.context.repo;
         const { eventName, sha, ref } = github.context;
@@ -2426,7 +2427,7 @@ function notify(name, url, status) {
                                 {
                                     keyValue: {
                                         topLabel: "Commit Message",
-                                        content: `${owner}/${repo}`,
+                                        content: msg,
                                         contentMultiline: true,
                                         button: textButton("OPEN COMMIT", eventUrl)
                                     }

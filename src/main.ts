@@ -7,6 +7,7 @@ async function run() {
     const name = core.getInput('name', { required: true });
     const url = core.getInput('url', { required: true });
     const status = JobStatus.parse(core.getInput('status', { required: true }));
+    const msg = core.getInput('message', { required: true });
 
     core.debug(`input params: name=${name}, status=${status}, url=${url}`);
 
