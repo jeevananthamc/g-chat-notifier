@@ -10,7 +10,7 @@ async function run() {
 
     core.debug(`input params: name=${name}, status=${status}, url=${url}`);
 
-    await GoogleChat.notify(name, url, status);
+    await GoogleChat.notify(name, url, status, msg);
     console.info('Sent message.')
   } catch (error) {
     core.setFailed(error.message);
