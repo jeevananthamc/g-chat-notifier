@@ -44,7 +44,7 @@ export async function notify(name: string, url: string, status: Status) {
           widgets: [
             {
               keyValue: {
-                topLabel: "Commit message",
+                topLabel: "repository",
                 content: `${owner}/${repo}`,
                 contentMultiline: true,
                 button: textButton("OPEN REPOSITORY", repoUrl)
@@ -52,10 +52,13 @@ export async function notify(name: string, url: string, status: Status) {
             },
             {
               keyValue: {
-                topLabel: "Commit Id",
-                content: "",
-                button: textButton("OPEN COMMIT", eventUrl)
+                topLabel: "event name name",
+                content: eventName,
+                button: textButton("OPEN EVENT", eventUrl)
               }
+            },
+            {
+              keyValue: { topLabel: "ref", content: ref }
             }
           ]
         },
