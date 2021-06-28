@@ -2436,7 +2436,7 @@ function notify(name, url, status, msg) {
                         },
                         {
                             widgets: [{
-                                    buttons: [textButton("OPEN CHECKS", checksUrl)]
+                                    buttons: [textButton("SEE LOGS", checksUrl)]
                                 }]
                         }
                     ]
