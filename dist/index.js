@@ -2425,7 +2425,7 @@ function notify(name, url, status) {
                             widgets: [
                                 {
                                     keyValue: {
-                                        topLabel: "repository",
+                                        topLabel: "Commit message",
                                         content: `${owner}/${repo}`,
                                         contentMultiline: true,
                                         button: textButton("OPEN REPOSITORY", repoUrl)
@@ -2433,13 +2433,10 @@ function notify(name, url, status) {
                                 },
                                 {
                                     keyValue: {
-                                        topLabel: "event name",
-                                        content: eventName,
-                                        button: textButton("OPEN EVENT", eventUrl)
+                                        topLabel: "Commit Id",
+                                        content: "",
+                                        button: textButton("OPEN COMMIT", eventUrl)
                                     }
-                                },
-                                {
-                                    keyValue: { topLabel: "ref", content: ref }
                                 }
                             ]
                         },
