@@ -12,6 +12,7 @@ async function run() {
     core.debug(`input params: name=${name}, status=${status}, url=${url}`);
     console.log("From feat");
     console.log("From feat 1");
+    console.log("From feat 2");
     await GoogleChat.notify(name, url, status, msg);
     console.info("Sent message.");
   } catch (error) {
