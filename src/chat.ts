@@ -60,6 +60,8 @@ export async function notify(name: string, url: string, status: Status, msg: str
       ]
     }]
   };
+  
+  console.log("From Master")
 
   const response = await axios.default.post(url, body);
   if (response.status !== 200) {
