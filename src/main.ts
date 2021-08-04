@@ -10,7 +10,6 @@ async function run() {
     const msg = core.getInput("message", { required: true });
 
     core.debug(`input params: name=${name}, status=${status}, url=${url}`);
-    console.log("From feat");
     await GoogleChat.notify(name, url, status, msg);
     console.info("Sent message.");
   } catch (error) {
