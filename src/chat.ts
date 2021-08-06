@@ -72,6 +72,8 @@ export async function notify(
       },
     ],
   };
+  
+  console.log("==")
 
   const response = await axios.default.post(url, body);
   if (response.status !== 200) {
